@@ -14,4 +14,7 @@ describe("surrounded tiles", () => {
     it("should handle ninths example", () => {
         expect(surroundedTiles("10/data/example-9")).to.equal(10);
     })
+    it("should handle actual puzzle", () => {
+        expect(surroundedTiles("10/data/example-5")).to.equal(367);
+    })
 });
