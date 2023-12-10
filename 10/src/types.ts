@@ -58,3 +58,21 @@ export const allowedDirectionsPerTileType: Record<TileType, Direction[]> = {
     [TileType.START]: [Direction.DOWN, Direction.LEFT, Direction.UP, Direction.RIGHT],
     [TileType.GROUND]: [],
 }
+
+export enum DirectionType {
+    HORIZONTAL = "horizontal",
+    VERTICAL = "vertical",
+}
+
+export const directionTypeToDirection: Record<DirectionType, Direction[]> = {
+    [DirectionType.HORIZONTAL]: [Direction.RIGHT, Direction.LEFT],
+    [DirectionType.VERTICAL]: [Direction.UP, Direction.DOWN],
+}
+
+export const directionToDirectionTyp: Record<Direction, DirectionType> = {
+    [Direction.DOWN]: DirectionType.VERTICAL,
+    [Direction.LEFT]: DirectionType.HORIZONTAL,
+    [Direction.UP]: DirectionType.VERTICAL,
+    [Direction.RIGHT]: DirectionType.HORIZONTAL,
+}
+
