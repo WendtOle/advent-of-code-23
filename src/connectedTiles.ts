@@ -1,6 +1,4 @@
-import { AreaMap, Direction, Position, TileType, directionPositions, directionTileTypes } from "./types"
-
-
+import { AreaMap, Direction, Position, TileType, allowedDirectionsPerTileType, directionPositions, directionTileTypes } from "./types"
 
 const getNewPosition = (position: Position, direction: Direction) => {
     const directionPosition = directionPositions[direction]
@@ -23,11 +21,12 @@ const isValidDirection = (areaMap: AreaMap, position: Position)=> (direction: Di
 }
 
 export const connectedTiles = (areaMap: AreaMap, position: Position): Position[] => {
+    //console.log("connectedTiles", {areaMap, position})
     const tileType = areaMap[position.y][position.x]
     if (tileType === TileType.GROUND) {
         throw new Error("You on the ground, something went wrong")
     }
-    const validDirections = Object.keys(directionPositions).filter((directionString: string) => isValidDirection(areaMap, position)(directionString as Direction))
+    const validDirections = allowedDirectionsPerTileType[tileType].filter((directionString: string) => isValidDirection(areaMap, position)(directionString as Direction))
     const directionsWithConnectedTiles = validDirections.filter((direction) => {
         const newPosition = getNewPosition(position, direction as Direction)
         return directionTileTypes[direction as Direction].includes(areaMap[newPosition.y][newPosition.x])

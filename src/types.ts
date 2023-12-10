@@ -42,8 +42,19 @@ export const directionPositions: Record<Direction, Position> = {
 }
 
 export const directionTileTypes: Record<Direction, TileType[]> = {
-    [Direction.DOWN]: [TileType.NORTH_SOUTH, TileType.NORTH_EAST, TileType.NORTH_WEST],
-    [Direction.RIGHT]: [TileType.EAST_WEST, TileType.NORTH_EAST, TileType.SOUTH_EAST],
-    [Direction.UP]: [TileType.NORTH_SOUTH, TileType.SOUTH_EAST, TileType.SOUTH_WEST],
-    [Direction.LEFT]: [TileType.EAST_WEST, TileType.NORTH_WEST, TileType.SOUTH_WEST],
+    [Direction.DOWN]: [TileType.NORTH_SOUTH, TileType.NORTH_EAST, TileType.NORTH_WEST, TileType.START],
+    [Direction.LEFT]: [TileType.EAST_WEST, TileType.NORTH_EAST, TileType.SOUTH_EAST, TileType.START],
+    [Direction.UP]: [TileType.NORTH_SOUTH, TileType.SOUTH_EAST, TileType.SOUTH_WEST, TileType.START],
+    [Direction.RIGHT]: [TileType.EAST_WEST, TileType.NORTH_WEST, TileType.SOUTH_WEST, TileType.START],
+}
+
+export const allowedDirectionsPerTileType: Record<TileType, Direction[]> = {
+    [TileType.NORTH_SOUTH]: [Direction.UP, Direction.DOWN],
+    [TileType.EAST_WEST]: [Direction.LEFT, Direction.RIGHT],
+    [TileType.NORTH_EAST]: [Direction.UP, Direction.RIGHT],
+    [TileType.NORTH_WEST]: [Direction.UP, Direction.LEFT],
+    [TileType.SOUTH_EAST]: [Direction.DOWN, Direction.RIGHT],
+    [TileType.SOUTH_WEST]: [Direction.DOWN, Direction.LEFT],
+    [TileType.START]: [Direction.DOWN, Direction.LEFT, Direction.UP, Direction.RIGHT],
+    [TileType.GROUND]: [],
 }
