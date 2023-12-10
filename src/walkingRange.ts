@@ -1,5 +1,3 @@
-export const walkingRange = () => {
+export const walkingRange = (mapFileName: string) => {
     return -1
 }
-
-console.log("hello world")
