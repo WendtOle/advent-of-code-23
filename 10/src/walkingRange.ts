@@ -2,15 +2,12 @@ import { connectedTiles } from "./connectedTiles"
 import { loadAreaMap } from "./loadAreaMap"
 import { startPos } from "./startPos"
 import { AreaMap, Position } from "./types"
+import { isPositionSame } from "./utils"
 
 export const walkingRange = (mapFileName: string) => {
     const areaMap = loadAreaMap(mapFileName)
     const paths = getPath(areaMap)
     return (paths.length - 1) / 2
-}
-
-const isPositionSame = (left: Position, right: Position) => {
-    return left.x === right.x && left.y === right.y
 }
 
 export const getPath = (areaMap: AreaMap): Position[] => {
