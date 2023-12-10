@@ -4,7 +4,7 @@ import { TileType } from "../src/types";
 
 describe("load area map", () => {
     it("should handle example-1", () => {
-        expect(loadAreaMap("data/example-1")).to.deep.equal([
+        expect(loadAreaMap("10/data/example-1")).to.deep.equal([
             [TileType.GROUND, TileType.GROUND,TileType.GROUND, TileType.GROUND,TileType.GROUND], 
             [TileType.GROUND, TileType.START,TileType.EAST_WEST, TileType.SOUTH_WEST,TileType.GROUND],
             [TileType.GROUND, TileType.NORTH_SOUTH,TileType.GROUND, TileType.NORTH_SOUTH,TileType.GROUND],
