@@ -5,15 +5,15 @@ import { AreaMap, Position } from "./types"
 
 export const walkingRange = (mapFileName: string) => {
     const areaMap = loadAreaMap(mapFileName)
-    const paths = getPaths(areaMap)
-    return (paths[0].length - 1) / 2
+    const paths = getPath(areaMap)
+    return (paths.length - 1) / 2
 }
 
 const isPositionSame = (left: Position, right: Position) => {
     return left.x === right.x && left.y === right.y
 }
 
-const getPaths = (areaMap: AreaMap) => {
+export const getPath = (areaMap: AreaMap): Position[] => {
     const startPosition = startPos(areaMap)
     const connected = connectedTiles(areaMap, startPosition)
     const output = connected.map((position) => {
@@ -26,7 +26,7 @@ const getPaths = (areaMap: AreaMap) => {
         }
         return path
     })
-    return output
+    return output[0]
 }
 
 const getNext = (areaMap: AreaMap, prev: Position, curr: Position): Position => {
