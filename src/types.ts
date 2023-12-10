@@ -26,3 +26,24 @@ export interface Position {
     x: number;
     y: number;
 }
+
+export enum Direction {
+    UP = "up",
+    RIGHT = "right",
+    DOWN = "down",
+    LEFT = "left",
+}
+
+export const directionPositions: Record<Direction, Position> = {
+    [Direction.UP]: {x: 0, y: -1},
+    [Direction.RIGHT]: {x: 1, y: 0},
+    [Direction.DOWN]: {x: 0, y: 1},
+    [Direction.LEFT]: {x: -1, y: 0},
+}
+
+export const directionTileTypes: Record<Direction, TileType[]> = {
+    [Direction.DOWN]: [TileType.NORTH_SOUTH, TileType.NORTH_EAST, TileType.NORTH_WEST],
+    [Direction.RIGHT]: [TileType.EAST_WEST, TileType.NORTH_EAST, TileType.SOUTH_EAST],
+    [Direction.UP]: [TileType.NORTH_SOUTH, TileType.SOUTH_EAST, TileType.SOUTH_WEST],
+    [Direction.LEFT]: [TileType.EAST_WEST, TileType.NORTH_WEST, TileType.SOUTH_WEST],
+}
