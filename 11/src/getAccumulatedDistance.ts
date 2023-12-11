@@ -1,16 +1,16 @@
 import { getDistance } from "./getDistance";
 import { getGalaxyPositions } from "./getGalaxyPositions";
-import { Image } from "./types";
+import { getJumpMarks } from "./getJumpMarks";
+import { DistanceWithJumps, Image } from "./types";
 
-export const getAccumulatedDistance = (image: Image): number => {
+export const getAccumulatedDistance = (image: Image): DistanceWithJumps => {
     const galaxyPositions = getGalaxyPositions(image)
-    let distance = 0 
-    let counter = 0
+    const jumpMarks = getJumpMarks(image)
+    let distance: DistanceWithJumps = {jumps: 0, steps: 0} 
     for(let i = 0; i < galaxyPositions.length; i++) {
         for(let j = 0; j < i; j++) {
-            counter ++
-            const currentDistance = getDistance(galaxyPositions[i], galaxyPositions[j])
-            distance += currentDistance
+            const currentDistance = getDistance(galaxyPositions[i], galaxyPositions[j], jumpMarks)
+            distance = {jumps: distance.jumps + currentDistance.jumps, steps: distance.steps + currentDistance.steps}
         }
     }
     return distance

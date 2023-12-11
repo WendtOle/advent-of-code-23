@@ -26,3 +26,8 @@ export interface JumpMarks {
     horizontal: number[];
     vertical: number[];
 }
+
+export interface DistanceWithJumps {
+    steps: number;
+    jumps: number;
+}
