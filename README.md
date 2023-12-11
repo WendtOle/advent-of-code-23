@@ -25,3 +25,6 @@ But it took me a while find out how to handle the different types of crossings.
 ### Notes 11-1
 Calculating the distance in grid was actually not that hard as I thought in the first place.
 Finding the combination between all stars without duplications took me longer than expected but not that long in total.
+
+### Notes 11-2
+After solving this task it seems for easier to express the scaling of empty rows and columns by jumps than by rebuilding the scaling inside an array.
