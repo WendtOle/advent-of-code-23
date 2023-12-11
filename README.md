@@ -1,14 +1,14 @@
 # Advent of code 2023
 See https://adventofcode.com/2023 for tasks. 
 
-# Solutions
-## 10. December
-### How to run
+# How to run
+Look in the package.json. 
+There should be for every day a testing command like the following:
 ```
 npm run test-10
 ```
-The first task is run in the test file "10/test/walkingRage.spec.ts" in the test "should handle fifth example".
-The second task is run in the test file "10/test/surroundedTiles.spec.ts" in the test "should handle actual puzzle"
+
+# Solutions
 
 ### Notes 10-1
 First I tried a recursive approach but this failed, because the the recursion would have reached to deep. 
@@ -21,3 +21,7 @@ There it is given that the tile "S" could connect with every kind of pipe.
 ### Notes 10-2
 The idea that you have to count the times you cross the loop on the way from outside to a specific point came to me relatively fast.
 But it took me a while find out how to handle the different types of crossings. 
+
+### Notes 11-1
+Calculating the distance in grid was actually not that hard as I thought in the first place.
+Finding the combination between all stars without duplications took me longer than expected but not that long in total.
