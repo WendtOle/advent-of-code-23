@@ -16,3 +16,13 @@ export interface Position {
 }
 
 export const notUndefined = <T>(input: T | undefined): input is T => input !== undefined
+
+export enum Orientation {
+    HORIZONTAL = "horizontal",
+    VERTICAL = "vertical"
+}
+
+export interface JumpMarks {
+    horizontal: number[];
+    vertical: number[];
+}
