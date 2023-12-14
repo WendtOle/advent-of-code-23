@@ -6,7 +6,8 @@
   "scripts": {
     "test-01": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register '01/**/*.spec.ts'",
     "test-10": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register '10/**/*.spec.ts'",
-    "test-11": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register '11/**/*.spec.ts'"
+    "test-11": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register '11/**/*.spec.ts'",
+    "test-13": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register '13/**/*.spec.ts'"
   },
   "author": "",
   "license": "ISC",
