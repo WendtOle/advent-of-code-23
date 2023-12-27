@@ -6,7 +6,7 @@ export const loadSlopeString = (fileName: string): Slope => {
     const stringData = data.toString()
     const splitted = stringData.split("\n")
     return {
-        slopeString: stringData.replace("\n", ""),
+        slopeString: stringData.split("\n").join(""),
         width: splitted[0].length,
         height: splitted.length,
     }
